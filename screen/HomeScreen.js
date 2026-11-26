@@ -1,14 +1,20 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import colors from '../constants/colors';
+import { TouchableOpacity } from 'react-native';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }){
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Kopi Nusantara</Text>
-      <Text style={styles.item}>Espresso</Text>
-      <Text style={styles.item}>Cappuccino</Text>
+        <Text style={styles.title}>Kopi Nusantara</Text>
+
+        <TouchableOpacity onPress={() => navigation.navigate('Detail', { name: 'Espresso' })}>
+        <Text style={styles.item}>Espresso</Text>
+        </TouchableOpacity>
+        
+        <Text style={styles.item}>Cappuccino</Text>
     </View>
+
   );
 }
 
